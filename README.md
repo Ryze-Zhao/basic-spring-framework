@@ -18,7 +18,9 @@
 #### 使用说明
 BasicSpringFramework父模块
 
-
+1   junior1_kuangshen_case1
+1.1     com.ryzezhao.example1                       常用的Dao、Service多层注入简单事例
+1.2     com.ryzezhao.example2                       IOC创建对象的方式：构造函数方式
 
 
 
