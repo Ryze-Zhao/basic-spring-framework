@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--使用Spring来创建对象，在Spring这些都称为Bean
+    类型变量名=new类型()；
+    Boss boss = new Boss();
+
+    id：唯一标识（可理解为：变量名boss）
+    class：想new对象的类；
+    property：相当于给对象中的属性设置一个值！
+    <bean id="boss" class="com.ryzezhao.example1.Boss">
+        <property name="bossName" value="Your Boss"/>
+    </bean>-->
+    <bean id="mysqlDao" class="com.ryzezhao.example1.MysqlDao"></bean>
+    <bean id="oracleDao" class="com.ryzezhao.example1.OracleDao"></bean>
+    <bean id="sqlServerDao" class="com.ryzezhao.example1.SqlServerDao"></bean>
+
+    <bean id="bossServiceImpl" class="com.ryzezhao.example1.BossServiceImpl">
+        <!--当我们需要更改查询方式时，只需改变这里即可，而不用修改代码，而传统方式会改变代码。-->
+        <!--为什么是改变配置？因为发布后代码将是.class，只有停服务器重新加载新的代码，但是配置可以改变，达到不重启服务器。-->
+        <property name="sqlDao" ref="mysqlDao"/>
+    </bean>
+</beans>
