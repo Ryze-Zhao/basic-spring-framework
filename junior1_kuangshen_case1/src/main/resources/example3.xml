@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="staff" class="com.ryzezhao.example3.Staff">
+        <!--constructor-arg使用的是构造函数的方式；property使用的是setter的方式-->
+        <property name="name" value="员工"></property>
+        <property name="age" value="10"></property>
+    </bean>
+
+    <bean id="boss" class="com.ryzezhao.example3.Boss">
+        <!--第一种：注入普通属性，value-->
+        <property name="name" value="我是老板"></property>
+        <!--第二种：注入Bean，使用ref关联-->
+        <property name="staff" ref="staff"></property>
+        <!--第三种：注入数组，使用array-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+        <!--第四种：注入List，使用list-->
+        <property name="hobbies">
+            <list>
+                <value>听歌</value>
+                <value>敲代码</value>
+                <value>看电影</value>
+            </list>
+        </property>
+
+        <!--第五种：注入Map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="111111222222223333"/>
+                <entry key="银行卡" value="1321231312312313123"/>
+            </map>
+        </property>
+        <!--第六种：注入Set-->
+        <property name="skill">
+            <set>
+                <value>敲代码</value>
+                <value>找女朋友</value>
+                <value>赚钱</value>
+            </set>
+        </property>
+        <!--第七种：null-->
+        <property name="age">
+            <null/>
+        </property>
+
+        <!--第八种：Properties-->
+        <property name="info">
+            <props>
+                <prop key="driver">20190525</prop>
+                <prop key="ur1">男</prop>
+                <prop key="username">root</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
