@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config></context:annotation-config>
+    <!--由于我们的People、Cat、Dog都有一个name的属性，因此需要使用 @Qualifier 指定-->
+    <bean id="catName" class="java.lang.String" c:value="A Cat"/>
+    <bean id="dogName" class="java.lang.String" c:value="A Dog"/>
+    <bean id="peopleName" class="java.lang.String" c:value="A Man"/>
+
+    <!--情况一：如cat和dog都只有一个bean，那么@Autowired可以直接匹配注入-->
+    <bean id="cat" class="com.ryzezhao.example8.Cat"/>
+    <bean id="dog" class="com.ryzezhao.example8.Dog"/>
+
+    <!--情况二：如Cat有cat和cat1，但是由于@Autowired先byType匹配，但这里有2个Cat，因此会根据byName匹配id，最后会匹配到cat，接着可以成功输出-->
+<!--    <bean id="cat" class="com.ryzezhao.example8.Cat"/>
+    <bean id="cat1" class="com.ryzezhao.example8.Cat"/>
+    <bean id="dog" class="com.ryzezhao.example8.Dog"/>-->
+
+    <!--情况三：如Cat有cat1和cat2，但是由于@Autowired先byType匹配，但这里有2个Cat，因此会根据byName匹配id，最后不能匹配到id为cat，因此报错-->
+    <!--因此可以使用@Qualifier(value = "cat1")这样指定需要使用哪个Cat，就跟People、Cat、Dog都有一个name的属性一样，指定用那个name-->
+    <!--    <bean id="cat1" class="com.ryzezhao.example8.Cat"/>
+        <bean id="cat2" class="com.ryzezhao.example8.Cat"/>
+        <bean id="dog" class="com.ryzezhao.example8.Dog"/>-->
+
+
+    <!--也可以使用java的注解@Resource（javax.annotation.Resource;）可以参考People的代码-->
+    <!--@Autowired默认通过byType的方式实现，若匹配上不上，会根据byName进行匹配，若匹配不成功再报错（可使用@Qualifier指定bean的id）【常用】-->
+    <!--​@Resource默认通过byName的方式实现，如果找不到名字，则通过byType实现！如果两个都找不到的情况下，就报错！【常用】-->
+
+
+
+    <bean id="people" class="com.ryzezhao.example8.People"></bean>
+</beans>
