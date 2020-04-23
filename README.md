@@ -26,10 +26,10 @@ BasicSpringFramework父模块
 1.5     com.ryzezhao.example5                       IOC-事例5-使用C与P标签进行构造函数与Setter注入
 1.6     com.ryzezhao.example6                       IOC-事例6-Bean作用域；singleton；prototype；request；session；application；websocket；
 1.7     com.ryzezhao.example7                       IOC-事例7-自动装配-xml
-
-
-
-
+1.8     com.ryzezhao.example8                       IOC-事例8-自动装配-注解
+1.9     com.ryzezhao.example9                       IOC-事例9-注解开发
+1.10    com.ryzezhao.example10                      IOC-事例10-使用Java作为Config（纯注解）：方式一
+1.11    com.ryzezhao.example11                      IOC-事例11-使用Java作为Config（纯注解）：方式二
 
 
 
