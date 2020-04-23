@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>junior1_kuangshen_case1</module>
+        <module>junior1_kuangshen_case2</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
