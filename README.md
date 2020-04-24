@@ -18,7 +18,7 @@
 #### 使用说明
 BasicSpringFramework父模块
 
-1   junior1_kuangshen_case1
+1   junior1_kuangshen_case1                     初级-kuangshen-案例一（Spring FrameWork IOC）
 1.1     com.ryzezhao.example1                       IOC-事例1-常用的Dao、Service多层注入简单事例
 1.2     com.ryzezhao.example2                       IOC-事例2-IOC创建对象的方式：构造函数
 1.3     com.ryzezhao.example3                       IOC-事例3-IOC创建对象的方式：Setter（constructor-arg使用的是构造函数的方式；property使用的是setter的方式）
@@ -31,7 +31,11 @@ BasicSpringFramework父模块
 1.10    com.ryzezhao.example10                      IOC-事例10-使用Java作为Config（纯注解）：方式一
 1.11    com.ryzezhao.example11                      IOC-事例11-使用Java作为Config（纯注解）：方式二
 
-
+2   junior1_kuangshen_case2                     初级-kuangshen-案例二（Spring FrameWork AOP）（建议学习静态代理和动态代理后再学习）
+2.1     com.ryzezhao.example1                       AOP-事例1-使用（XML版）：实现Spring API接口
+2.2     com.ryzezhao.example2                       AOP-事例2-使用（XML版）：自定义AOP【主要是切面定义】
+2.3     com.ryzezhao.example3                       AOP-事例3-使用（XML版）：Spring：AspectJ注解用法
+2.4     com.ryzezhao.example4                       AOP-事例4-使用（注解版）：Spring：AspectJ用法（常用方法）
 
 
 
