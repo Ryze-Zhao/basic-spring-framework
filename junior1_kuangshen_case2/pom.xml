@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <properties>
-        <spring.version>5.1.5.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
     </properties>
 
     <artifactId>junior1_kuangshen_case2</artifactId>
